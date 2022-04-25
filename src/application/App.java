@@ -1,15 +1,26 @@
 package application;
 
-import java.sql.Connection;
+import java.util.List;
 
-import db.DB;
+import model.dao.DaoFactory;
+import model.dao.SellerDao;
+import model.entities.Seller;
 
 public class App {
 
 	public static void main(String[] args) {
-		
-		Connection conn = DB.getConn();
-		DB.closeConn();
+
+		SellerDao sellerDao = DaoFactory.createSellerDao();
+
+		System.out.println("=== TEST 1: seller findById =====");
+		Seller seller = sellerDao.findById(3);
+		System.out.println(seller);
+
+		System.out.println("\n=== TEST 2: seller findAll =====");
+		List<Seller> list = sellerDao.findAll();
+		for (Seller obj : list) {
+			System.out.println(obj);
+		}
 
 	}
 

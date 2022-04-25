@@ -4,7 +4,7 @@ import db.DB;
 
 public class DaoFactory {
 	
-	public static SellerDao createSelerDao() {
+	public static SellerDao createSellerDao() {
 		return new SellerDaoJDBC(DB.getConn());
 	}
 }
