@@ -27,7 +27,7 @@ public class App {
 		/*System.out.println("=== TEST 3: seller insert =====");
 		seller = new Seller(null, "CJ", "cj@dev.com", new Date(), 3000.0, new Department(2, null));
 		sellerDao.insert(seller);
-		System.out.println("Inserted! new Id:" + seller.getId());*/
+		System.out.println("Inserted! new Id:" + seller.getId());
 
 		System.out.println("=== TEST 4: seller update =====");
 		seller = sellerDao.findById(8);
@@ -35,6 +35,11 @@ public class App {
 		seller.setEmail("belle@belle.com");
 		sellerDao.update(seller);
 		System.out.println("Updated seller "+seller);
+		
+		System.out.println("=== TEST 5: seller delete =====");
+		seller = sellerDao.findById(9);
+		sellerDao.deleteById(seller.getId());
+		System.out.println("Deleted seller "+  seller.getName());*/
 	}
 
 }
